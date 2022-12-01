@@ -7,38 +7,49 @@ function generatePassword() {
   var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var letters = "abcdefghijklmnopqrstuvwxyz";
   var numbers = "0987654321";
+  var passwordLength = 8;
+  var password = "";
   var upLetters = letters.toUpperCase();
   var isUppercase =  confirm("Would you like to use uppercase?");
   var isLowercase = confirm("Would you like to use lowercase?");
   var isSpecial = confirm("Would you like to use special characters?");
   var isNumber = confirm("Would you like to use numbers?");
+for (var i = 0; i > 8 && i< 128; i++) {
+  var random =Math.floor(Math.random() * letters.length);
+}
 
   if (isUppercase) {
     // use Uppercase letters
-    console.log("uppercase");
+    var random =Math.floor(Math.random() * letters.length);
     chooseFrom += upLetters;
+  }else{
+
   }
 
   if (isLowercase) {
-    // use Lowercase letters
-    console.log("lowercase");
+    password.outcome[1] = Math.floor(Math.random() * letters.length);
+    console.log(password.outcome[2]);
+  }else{
+
   }
 
   if (isSpecial) {
-    // use Uppercase letters
-    console.log("special");
+    var random = Math.floor(Math.random() * special.length);
+  }else{
+
   }
 
   if (isNumber) {
-    // use Uppercase letters
-    console.log("number");
+    var random = Math.floor(Math.random() * numbers.length);
+  }else{
+
   }
 
 //Grab Random letters
   chooseFrom += upLetters;
   chooseFrom += special;
 
-  return ";"
+  return password.outcome.join("");
 }
 
 // Write password to the #password input
