@@ -6,19 +6,20 @@ function generatePassword() {
   var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var letters = "abcdefghijklmnopqrstuvwxyz";
   var numbers = "0987654321";
-  var password = "";
+  var finalPassword = "";
+  var hereItIs = "";
   var upLetters = letters.toUpperCase();
   var isUppercase =  confirm("Would you like to use uppercase?");
   var isLowercase = confirm("Would you like to use lowercase?");
   var isSpecial = confirm("Would you like to use special characters?");
   var isNumber = confirm("Would you like to use numbers?");
   var isLength = prompt("Choose password length from 8 to 128");
-    if (isLength < 8 || isLength > 128) { 
-        alert("Please choose a number between 8 and 128.");
+    if (isLength <8 || > 128){
+        alert("Please choose a number between 8 anbd 128.");
     }
   
     if (isUppercase) {
-        password += letters
+        finalPassword += letters
       chooseFrom += upLetters;
     }else{
   
@@ -31,29 +32,29 @@ function generatePassword() {
     }
   
     if (isSpecial) {
-        password += special
+        finalPassword += special
     }else{
   
     }
   
     if (isNumber) {
-        password += numbers
+        finalPassword += numbers
     }else{
   
     }
-    var hereItIs = "";
   
-    for (var i =0; i , isLength; i++); {
-      hereItIs += password.charAt(Math.floor(Math.random() * password.length)); 
-    }
-
-    return password.join("");
   //Grab Random letters
-   
+    chooseFrom += upLetters;
+    chooseFrom += special;
+  
     
   }
   
+  for (var i =0; i , isLength; i++); {
+    hereItIs += finalPassword.charAt(Math.floor(Math.random() * finalPassword.length)); 
+  }
 
+  return hereItIs;
   // Write password to the #password input
   function writePassword() {
     var password = generatePassword();
