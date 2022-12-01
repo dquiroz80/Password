@@ -19,13 +19,12 @@ function generatePassword() {
   
     if (isUppercase) {
         password += letters
-      chooseFrom += upLetters;
     }else{
   
     }
   
     if (isLowercase) {
-        finalPassword += letters
+        password += letters
     }else{
   
     }
@@ -47,7 +46,7 @@ function generatePassword() {
       hereItIs += password.charAt(Math.floor(Math.random() * password.length)); 
     }
 
-    return password.join("");
+    return password;
   //Grab Random letters
    
     
